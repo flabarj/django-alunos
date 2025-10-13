@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Lista de Alunos{% endblock %}
+{% block content %}
+  <h2>Lista de Alunos</h2>
+  {% if alunos %}
+    <ul>
+      {% for a in alunos %}
+        <li>{{ a.nome }} — {{ a.matricula }} — {{ a.criado_em|date:"d/m/Y H:i" }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhum aluno cadastrado.</p>
+  {% endif %}
+{% endblock %}

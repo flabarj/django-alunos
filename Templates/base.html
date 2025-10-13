@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Meu Projeto Django{% endblock %}</title>
+    <style>
+      body { font-family: Arial; max-width: 900px; margin: 30px auto; }
+    </style>
+  </head>
+  <body>
+    <h1>Projeto Alunos</h1>
+    <nav>
+      <a href="/">Home</a> | <a href="/admin/">Admin</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
