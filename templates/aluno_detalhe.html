@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load tz %}
+{% block title %}Aluno{% endblock %}
+{% block content %}
+<div class="container" style="max-width:640px;">
+  <h2 class="h4 mb-3">Aluno</h2>
+  <dl class="row">
+    <dt class="col-sm-3">Nome</dt>
+    <dd class="col-sm-9">{{ aluno.nome }}</dd>
+    <dt class="col-sm-3">Matrícula</dt>
+    <dd class="col-sm-9">{{ aluno.matricula }}</dd>
+    <dt class="col-sm-3">Criado em</dt>
+    <dd class="col-sm-9">{{ aluno.criado_em|localtime|date:"d/m/Y H:i" }}</dd>
+  </dl>
+  <div class="d-flex gap-2">
+    <a class="btn btn-outline-success" href="{% url 'editar_aluno' aluno.id %}">Editar</a>
+    <a class="btn btn-outline-secondary" href="{% url 'lista_alunos' %}">Voltar</a>
+  </div>
+</div>
+{% endblock %}
